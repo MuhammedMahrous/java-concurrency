@@ -27,6 +27,9 @@ public class ForkJoin {
         long syncTime = end - start;
         log.info("Sync Sum = {} in {} ms", sum, syncTime);
 
+        log.info("Speedup = {}", (float) syncTime / (float) asyncTime);
+        log.info("Efficiency = {} % ",
+                (100 * syncTime / asyncTime) / Runtime.getRuntime().availableProcessors());
     }
 
     @AllArgsConstructor
